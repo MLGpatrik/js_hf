@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<center><h1>Welcome to the item editor</h1></center>
+<br>
+<br><br><br>
+<center>
+<table>
+  <tr>
+    <th>Item name</th>
+    <th>Item size</th>
+    <th>Item price</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="item_name" name="item_name" ></td>
+    <td><input type="text" id="item_size" name="item_size" ></td>
+    <td><input type="text" id="item_price" name="item_price" ></td>
+  </tr>
+</table>
+</center>
+<br>
+<center>
+<button name="additem" type="button">Add item</button>
+</center>
+<br>
+<center>
+<table>
+  <tr>
+    <th>Select</th>
+    <th>ID</th>
+    <th>Item name</th>
+    <th>Item size</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td><input type="radio" id="1" name="order_group" value="1"></td>
+    <td><input type="text" name="item_id_1" id="item_id_1" value="1" ></td>
+    <td><input type="text" name="item_name_1" id="item_name_1" value="mouse" ></td>
+    <td><input type="text" name="item_size_1" id="item_size_1" value="small" ></td>
+    <td><input type="text" name="item_price_1" id="item_price_1" value="300" ></td>
+  </tr>
+    <tr>
+    <td><input type="radio" id="2" name="order_group" value="2"></td>
+    <td><input type="text" name="item_id_2" id="item_id_2" value="2" ></td>
+    <td><input type="text" name="item_name_2" id="item_name_2" value="Graphics card" ></td>
+    <td><input type="text" name="item_size_2" id="item_size_2" value="medium" ></td>
+    <td><input type="text" name="item_price_2" id="item_price_2" value="3000" ></td>
+  </tr>
+</table>
+</center>
+<br>
+<center>
+<button name="cancel" type="button">Cancel</button> <button name="changeitem" type="button">Apply changes</button> <button name="deleteitem">Delete item</button>
+</center>
+
+<script type="text/javascript" src="/static/scripts/edititems.js"></script>
+</body>
+</html>
