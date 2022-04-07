@@ -34,20 +34,20 @@ module.exports = function (app) {
 
 	app.get('/',
 		getOrdersMW(objRepo) ,
-		renderMW(objRepo,'index'));
+		renderMW(objRepo,'index','shop management'));
 
 	app.get('/addorder',
 		getItemsMW(objRepo),
-		renderMW(objRepo,'add_order'));
+		renderMW(objRepo,'add_order','order placement site'));
 
 	app.get('/editorder/:id',
 		getOrderMW(objRepo),
 		getItemsMW(objRepo),
-		renderMW(objRepo,'modify_order'));
+		renderMW(objRepo,'modify_order','order modifier'));
 
 	app.get('/edititems', 
 		getItemsMW(objRepo),
-		renderMW(objRepo,'edit_items'));
+		renderMW(objRepo,'edit_items','item editor'));
 
 };
 

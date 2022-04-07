@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<%- include('welcomemessage') -%>
+<center>
+<table>
+  <tr>
+    <th>Order ID</th>
+    <th>Name</th>
+    <th>Address</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="order_id" name="order_id" value=<%= order.id %> readonly></td>
+    <td><input type="text" id="order_name" name="order_name" value="<%= order.name %>"></td>
+    <td><input type="text" id="order_address" name="order_address" value="<%= order.address %>" ></td>
+  </tr>
+</table>
+</center>
+<br>
+<center>
+<table>
+  <tr>
+    <th>Select</th>
+    <th>Item name</th>
+    <th>Item size</th>
+    <th>Price</th>
+  </tr>
+<%- include('itemtable') -%>
+</table>
+</center>
+<br>
+<center>
+<button name="cancel" type="button">Cancel</button> <button name="editorder" type="button">Apply changes</button>
+</center>
+
+<script type="text/javascript" src="/static/scripts/editorder.js"></script>
+</body>
+</html>

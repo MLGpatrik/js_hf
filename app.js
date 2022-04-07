@@ -3,7 +3,7 @@ var express = require('express');
 
 
 var app = express();
-
+app.set('view engine', 'ejs');
 //app.use(bodyParser.json());
 app.use('/static', express.static('static'));
 

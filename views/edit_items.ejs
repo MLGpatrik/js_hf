@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<%- include('welcomemessage') -%>
+<center>
+<table>
+  <tr>
+    <th>Item name</th>
+    <th>Item size</th>
+    <th>Item price</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="item_name" name="item_name" ></td>
+    <td><input type="text" id="item_size" name="item_size" ></td>
+    <td><input type="text" id="item_price" name="item_price" ></td>
+  </tr>
+</table>
+</center>
+<br>
+<center>
+<button name="additem" type="button">Add item</button>
+</center>
+<br>
+<center>
+<table>
+  <tr>
+    <th>Select</th>
+    <th>ID</th>
+    <th>Item name</th>
+    <th>Item size</th>
+    <th>Price</th>
+  </tr>
+  <% for (key in items) { var item = items[key]; %>
+  <tr>
+    <td><input type="radio" id=<%= item.itemid %> name="order_group" value=<%= item.itemid %>></td>
+    <td><input type="text" name="<%= "item_id_"+item.itemid %>" id="<%= "item_id_"+item.itemid %>" value="<%= item.itemid %>" ></td>
+    <td><input type="text" name="<%= "item_name_"+item.itemid %>" id="<%= "item_name_"+item.itemid %>" value="<%= item.itemName %>" ></td>
+    <td><input type="text" name="<%= "item_size_"+item.itemid %>" id="<%= "item_size_"+item.itemid %>" value="<%= item.itemSize %>" ></td>
+    <td><input type="text" name="<%= "item_price_"+item.itemid %>" id="<%= "item_price_"+item.itemid %>" value="<%= item.price %>" ></td>
+  </tr>
+  <% } %>
+</table>
+</center>
+<br>
+<center>
+<button name="cancel" type="button">Cancel</button> <button name="changeitem" type="button">Apply changes</button> <button name="deleteitem">Delete item</button>
+</center>
+
+<script type="text/javascript" src="/static/scripts/edititems.js"></script>
+</body>
+</html>
