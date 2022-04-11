@@ -35,11 +35,11 @@
   </tr>
   <% for (key in items) { var item = items[key]; %>
   <tr>
-    <td><input type="radio" id=<%= item.itemid %> name="order_group" value=<%= item.itemid %>></td>
-    <td><input type="text" name="<%= "item_id_"+item.itemid %>" id="<%= "item_id_"+item.itemid %>" value="<%= item.itemid %>" ></td>
-    <td><input type="text" name="<%= "item_name_"+item.itemid %>" id="<%= "item_name_"+item.itemid %>" value="<%= item.itemName %>" ></td>
-    <td><input type="text" name="<%= "item_size_"+item.itemid %>" id="<%= "item_size_"+item.itemid %>" value="<%= item.itemSize %>" ></td>
-    <td><input type="text" name="<%= "item_price_"+item.itemid %>" id="<%= "item_price_"+item.itemid %>" value="<%= item.price %>" ></td>
+    <td><input type="radio" id=<%= item._id %> name="order_group" value=<%= item._id %>></td>
+    <td><input type="text" name="<%= "item_id_"+item._id %>" id="<%= "item_id_"+item._id %>" value="<%= item._id %>" ></td>
+    <td><input type="text" name="<%= "item_name_"+item._id %>" id="<%= "item_name_"+item._id %>" value="<%= item.itemName %>" ></td>
+    <td><input type="text" name="<%= "item_size_"+item._id %>" id="<%= "item_size_"+item._id %>" value="<%= item.itemSize %>" ></td>
+    <td><input type="text" name="<%= "item_price_"+item._id %>" id="<%= "item_price_"+item._id %>" value="<%= item.price %>" ></td>
   </tr>
   <% } %>
 </table>

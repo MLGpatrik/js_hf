@@ -1,9 +1,9 @@
 <% for (key in items) { var item = items[key]; %>
   <tr>
-  <% if (typeof order !== 'undefined' && order.itemid == item.itemid){ %>
-    <td><input type="radio" name="order_group" value=<%=item.itemid%> checked></th>
+  <% if (typeof order !== 'undefined' && order._item.toString() == item._id.toString()){ %>
+    <td><input type="radio" name="order_group" value=<%=item._id%> checked></th>
   <% }else{ %>
-    <td><input type="radio" name="order_group" value=<%=item.itemid%>></th>
+    <td><input type="radio" name="order_group" value=<%=item._id%>></th>
   <% } %>
     <td><%=item.itemName%></td>
     <td><%=item.itemSize%></td>

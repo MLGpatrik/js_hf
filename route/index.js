@@ -14,15 +14,25 @@ const editOrderMW = require('../middleware/orders/editOrderMW');
 const addOrderMW = require('../middleware/orders/addOrderMW');
 const bodyParser = require('body-parser');
 const path = require('path');
+const ItemModel = require('../models/item');
+const OrderModel = require('../models/order');
 
 var jsonParser = bodyParser.json()
 
 module.exports = function (app) {
-    const objRepo = {};
+    const objRepo = {
+    	ItemModel: ItemModel,
+    	OrderModel: OrderModel
+    };
 
-	app.get('/deleteorder/:id', delOrderMW(objRepo));
+	app.get('/deleteorder/:id',
+		getOrdersMW(objRepo),
+		getOrderMW(objRepo),
+	 	delOrderMW(objRepo));
 
-	app.get('/deleteitem/:id', delItemMW(objRepo));
+	app.get('/deleteitem/:id',
+		getItemsMW(objRepo), 		
+		delItemMW(objRepo));
 
 	app.post('/additem',jsonParser, createItemMW(objRepo));
 
@@ -41,6 +51,7 @@ module.exports = function (app) {
 		renderMW(objRepo,'add_order','order placement site'));
 
 	app.get('/editorder/:id',
+		getOrdersMW(objRepo),
 		getOrderMW(objRepo),
 		getItemsMW(objRepo),
 		renderMW(objRepo,'modify_order','order modifier'));
