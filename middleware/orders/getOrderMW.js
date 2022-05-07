@@ -8,7 +8,7 @@ module.exports = function (objectrepository) {
         console.log("getting order: "+ req.params.id)
         
         if( typeof req.params.id === 'undefined' ){
-              return next(error);
+              return next(new Error("no param id"));
         }
 
 

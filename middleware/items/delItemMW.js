@@ -28,9 +28,6 @@ module.exports = function (objectrepository) {
                 return next(err);                
             }
             OrderModel.deleteMany({_item: req.params.id},(err)=>{
-                if(err){
-                    console.log(err);
-                }
                 res.redirect('/');
                 res.end();
             });
